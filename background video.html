@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background video</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        .video{
+            height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3));
+            position: relative;
+            padding: 0 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .video1{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+            .content{
+                text-align: center;
+            }
+            .content h1{
+                font-size: 160px;
+                font-weight: 600;
+                color: #fff;
+                transition: 0.5s;
+                padding: 0px 20px;
+                border-radius: 3px;
+                position: relative;
+                animation-name: color;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+
+            }
+            .content h1:hover{
+                -webkit-text-stroke:2px white;
+                color: transparent;
+            }
+            .content h1:hover::after{
+ 
+                
+                width: 100%;
+
+            }
+            .content h1::after{
+                position: absolute;
+                height: 7px;
+                width: 0px;
+                bottom: -15px;
+                background: rgb(251, 246, 246);
+                content: "";
+                left: 0px;
+                transition: 1s;
+
+
+            }
+            .content a{
+                border: 2px solid white;
+                margin-top: 20px;
+                display: inline-block;
+                text-decoration: none;
+                color: #fff;
+                padding: 14px 50px;
+                font-size: 24px;
+                transition: 0.5s;
+                animation-name: color;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+            /* @keyframes color{
+                0%{
+                    -webkit-text-stroke:2px white;
+                    color: transparent;
+                    
+                }
+                25%{
+                    -webkit-text-stroke:2px rgb(244, 0, 0);
+                    color: transparent;
+                    
+                }
+                50%{
+                    -webkit-text-stroke:2px rgb(21, 255, 0);
+                    color: transparent;
+                    
+                }75%{
+                    
+                    -webkit-text-stroke:2px rgb(230, 255, 1);
+                    color: transparent;
+                    
+                }
+                100%{
+                    
+                    -webkit-text-stroke:2px rgb(13, 0, 255);
+                    color: transparent;
+                    
+                }
+            } */
+            .content a:hover{
+                background: #fff;
+                color: black;
+                border-radius: 3px;
+            }
+
+            /* @media (min-aspect-ratio:16/9) {
+                .video1{
+                    width: 100%;
+                    height: auto;
+                }
+            } */
+                @media (min-aspect-ratio:1/9) {
+                .video1{
+                    width: auto;
+                    height: 100%;
+                }
+                
+            }
+    </style>
+</head>
+<body>
+    <section class="video">
+        <video loop muted autoplay plays-inline class="video1">
+            <source src="video.mp4">
+        </video>
+        <section class="content">
+            <h1>Journey</h1>
+            <a href="">Explore</a>
+
+        </section>
+    </section>
+    
+</body>
+</html>
